@@ -1,0 +1,201 @@
+@use "../../node_modules/bootstrap/scss/bootstrap";
+@use "theme";
+// Neue Schriftart importieren:
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+
+.navbar {
+  border-bottom: 1px solid var(--bs-border-color, #404040);
+  box-shadow: 0 2px 8px rgba(137, 18, 141, 0.03);
+  
+  .container {
+    border-bottom: none;
+  }
+  
+}
+
+.dropdown-menu {
+  background: #181a20 !important; // oder deine Wunschfarbe
+  backdrop-filter: none !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  border-radius: 0.5rem;
+  color: #fff;
+}
+
+.main-content {
+  padding-bottom: 70px;
+}
+
+.alert {
+  margin-top: 100px;
+}
+
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  border-width: 0;
+  @media (min-width: 768px) {
+    max-width: 500px;
+  }
+  @media (min-width: 992px) {
+    max-width: 600px;
+  }
+}
+.underline-glow {
+  text-decoration: none;
+  position: relative;
+}
+
+.underline-glow::after {
+  background-color: #fff; 
+  box-shadow: 0 0 10px #fff;
+  height: 4px; 
+  width: 100%;
+  background: linear-gradient(to right, #7F5AF0, #0099ff); 
+  border-radius: 2px; 
+  margin: 1rem 0;
+}
+
+/* Custom Hamburger Icon sichtbar machen */
+.custom-hamburger {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    position: relative;
+    vertical-align: middle;
+    /* Standard kein Ring */
+    box-shadow: none;
+    border-radius: 50%;
+    transition: box-shadow 0.3s;
+}
+.custom-hamburger span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 70%;
+    left: 15%;
+    background: linear-gradient(90deg, #7F5AF0 0%, #0099ff 100%);
+    border-radius: 3px;
+    opacity: 1;
+    transition: all 0.3s cubic-bezier(.4,2,.6,1);
+    box-shadow: 0 1px 8px rgba(127,90,240,0.15);
+}
+.custom-hamburger span:nth-child(1) { top: 7px; }
+.custom-hamburger span:nth-child(2) { top: 14px; }
+.custom-hamburger span:nth-child(3) { top: 21px; }
+
+/* Entferne Bootstrap Standard-Icon falls noch vorhanden */
+.navbar-toggler .navbar-toggler-icon {
+    display: none !important;
+}
+
+// Ring, wenn geöffnet (Bootstrap entfernt .collapsed wenn offen)
+.navbar-toggler:not(.collapsed) {
+  background: transparent !important; // Entfernt grauen Hintergrund
+  box-shadow: none !important;        // Entfernt Bootstrap-Shadow
+}
+
+.navbar-toggler:not(.collapsed) .custom-hamburger {
+  box-shadow: 0 0 0 4px #00bfff, 0 0 16px 4px #0099ff88;
+  outline: none;
+}
+
+.navbar-toggler:not(.collapsed) .custom-hamburger {
+    box-shadow: 0 0 0 4px #00bfff, 0 0 0 8px #2117a833;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.navbar-toggler:focus-visible .custom-hamburger,
+.navbar-toggler:focus .custom-hamburger {
+  position: relative;
+  outline: none;
+}
+.navbar-toggler:focus-visible .custom-hamburger::after,
+.navbar-toggler:focus .custom-hamburger::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(90deg, #00fff2 0%, #0099ff 100%);
+  opacity: 0.7;
+  box-shadow: 0 0 0 4px #fff, 0 0 16px 4px #0099ff44;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.main-card {
+  opacity: 0;
+  transform: translateY(80px); // weiter unten starten
+  transition: opacity 0.7s cubic-bezier(.4,2,.6,1), transform 0.7s cubic-bezier(.4,2,.6,1);
+  will-change: opacity, transform;
+}
+
+.main-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.secondary-card {
+  opacity: 0;
+  transform: translateY(80px); // weiter unten starten
+  transition: opacity 0.9s cubic-bezier(.4,2,.6,1), transform 0.9s cubic-bezier(.4,2,.6,1);
+  will-change: opacity, transform;
+}
+
+.secondary-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: #181a20 !important; // gleiche Farbe wie Dropdown
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+}
+
+// jQuery UI Autocomplete Dropdown Styling
+.ui-autocomplete {
+  background: #242629 !important; // dunkle Karte
+  color: #fff;
+  border-radius: 0.5rem;
+  border: 0px solid #6e89f6;
+  box-shadow: 0 4px 24px rgba(35,194,225,0.15);
+  padding: 0.5rem 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  z-index: 2000 !important;
+}
+
+.ui-menu-item-wrapper {
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  color: #fff;
+  background: transparent;
+  border-width: 0;
+}
+
+.ui-state-active, .ui-menu-item-wrapper.ui-state-active {
+  background: #0689db !important; /* Bootstrap 5 primary */
+  color: #fff !important;
+  border-radius: 0.5rem;
+}
+

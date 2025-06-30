@@ -1,0 +1,30 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kid_me_web_dev
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./src:/app  
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./src/.env.dev 
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:
+    image: postgres:14
+    container_name: kid_me_db_dev
+    volumes:
+      - postgres_data_dev:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432" 
+    env_file:
+      - ./src/.env.dev 
+    restart: unless-stopped
+
+volumes:
+  postgres_data_dev:

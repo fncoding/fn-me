@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center min-vh-100 pt-5 mt-5 pt-navbar">
+<div class="card main-card p-5 mb-4 rounded-3">
+    <div class="container-fluid text-center py-5">
+        {% include 'components/separator.html' %}
+        <h1 class="display-5 fw-bold test-centers">🚀 Willkommen, {{ user.username }}!</h1>
+        {% include 'components/separator.html' %}
+
+        <p class="col-md fs-4">🛌Das hier ist dein Dashboard</p>
+        <p class="col-md fs-4">📖Deine Haushalts App</p>
+        <p class="col-md fs-4">🖊️Hier kannst du deine Haushaltsdaten verwalten</p>
+        {% include 'components/separator.html' %}
+        <p class="col-md fs-4">🛜Teile deine ShoppingListen mit anderen Usern</p>
+        <p class="col-md fs-4">📲Erstelle Produkte und setz sie bequem auf deine Liste.</p>
+        <p class="col-md fs-4">Viel Spaß!🚀</p>
+        {% include 'components/separator.html' %}
+        <p class="col-md fs-4">TODo: Stocks, Expenses & Recipes</p>
+         {% include 'components/separator.html' %}
+   
+    </div>
+</div>
+</div>
+{% endblock %}
