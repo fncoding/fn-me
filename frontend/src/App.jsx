@@ -57,8 +57,7 @@ function App() {
       <Separator />
       <Portfolio />
       <Separator />
-      {/*<Contact />*/}
-      <Separator />
+     <Separator />
       <Footer />
       <ScrollToTopButton />
     </>
