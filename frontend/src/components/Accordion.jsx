@@ -6,8 +6,7 @@ const faqs = [
 		a: (
 			<div>
 				<p className="mb-2">
-					Ich biete Web‑ & IT‑Services für Privatpersonen, kleine Unternehmen und
-					Startups. Dazu gehören unter anderem:
+					Ich biete Web‑ & IT‑Services  Dazu gehören unter anderem:
 				</p>
 				<ul className="list-disc ml-6 space-y-1 text-gray-700 dark:text-gray-200">
 					<li>
@@ -81,13 +80,7 @@ const faqs = [
 						info@felixneumann.me
 					</a>
 				</p>
-				<p className="text-sm text-muted">
-					Alternativ über das Kontaktformular auf der Website oder die Seite{' '}
-					<a href="/contact" className="link">
-						/contact
-					</a>
-					.
-				</p>
+				
 			</div>
 		),
 	},
@@ -101,7 +94,7 @@ export default function Accordion() {
 	};
 
 	return (
-		<section id="faq" className="py-16 px-6 bg-base-200">
+		<section id="faq" className="py-16 px-6">
 			<div className="max-w-4xl mx-auto">
 				<h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
 					Häufig gestellte Fragen
@@ -115,7 +108,7 @@ export default function Accordion() {
 						<div
 							key={i}
 							tabIndex={0}
-							className={`collapse collapse-plus border border-base-300 bg-base-100 rounded-box ${
+							className={`collapse collapse-plus border border-base-300 rounded-box ${
 								openIndex === i ? 'collapse-open' : ''
 							}`}
 						>

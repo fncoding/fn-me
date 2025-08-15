@@ -3,6 +3,7 @@ import React, { useRef, useState, useEffect } from 'react';
 const HeroSection = () => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [contactHover, setContactHover] = useState(false);
 
   useEffect(() => {
     // Ensure video starts muted so autoplay works in browsers
@@ -56,23 +57,31 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 px-6 max-w-4xl text-center">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4">
-          Modern, immersive experiences
+          felixneumann
         </h1>
         <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8">
-          Nutze Video-Hintergründe, interaktive Controls und nahtlose Navigation — gebaut mit Tailwind CSS & DaisyUI.
+            Modern, Immersive, Web -Designs & CyberSecurity
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
             onClick={handleGetStarted}
-            className="btn btn-primary btn-lg px-8"
+            className={`px-8 py-3 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/30 cursor-pointer ${contactHover ? 'text-white bg-transparent border-0' : 'border border-white text-white bg-transparent'}`}
             aria-label="Get started - scroll to main"
           >
             Get Started
           </button>
 
-          <a href="/contact" className="btn btn-ghost btn-lg px-6" aria-label="Contact">
-            Contact
+          <a
+            href="/contact"
+            onMouseEnter={() => setContactHover(true)}
+            onMouseLeave={() => setContactHover(false)}
+            className="group btn btn-ghost btn-lg px-6 relative overflow-hidden transition-all duration-300 border border-transparent rounded-lg hover:border-white hover:scale-105 hover:bg-transparent"
+            aria-label="Contact"
+          >
+            <span className="relative z-10">Contact</span>
+            {/* Animated rounded border layer (appears on hover) */}
+            <span className="absolute inset-0 rounded-lg border border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
           </a>
         </div>
       </div>
