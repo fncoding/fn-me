@@ -1,0 +1,21 @@
+FROM node:20
+
+# set working directory
+WORKDIR /app
+
+# ensure node_modules binaries are in PATH
+ENV PATH /app/node_modules/.bin:$PATH
+ENV NODE_ENV=development
+
+# copy package manifests and install dependencies (cache layer)
+COPY package*.json ./
+RUN npm install
+
+# copy source
+COPY . .
+
+# expose Vite default dev port
+EXPOSE 5173
+
+# start dev server accessible from host
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "5173"]

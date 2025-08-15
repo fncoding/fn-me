@@ -38,17 +38,18 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative w-full h-screen flex items-center justify-center text-white overflow-hidden">
+    <section className="relative w-full h-screen flex items-center justify-center text-white overflow-hidden bg-black">
       {/* Background video (place hero-bg.mp4 in frontend/public so it's served at /hero-bg.mp4) */}
       <video
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
-        src="/hero-bg.mp4"
+        src="/heroepic.mp4"
         autoPlay
         muted
         loop
         playsInline
         aria-hidden="true"
+        style={{ objectPosition: 'center 60%' }}
       />
 
       {/* Dark gradient overlay for better contrast */}
@@ -56,24 +57,24 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 px-6 max-w-4xl text-center">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4">
+        <h1 className="reveal text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4">
           felixneumann
         </h1>
-        <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8">
+        <p className="reveal text-lg sm:text-xl md:text-2xl text-white/90 mb-8">
             Modern, Immersive, Web -Designs & CyberSecurity
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
             onClick={handleGetStarted}
-            className={`px-8 py-3 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/30 cursor-pointer ${contactHover ? 'text-white bg-transparent border-0' : 'border border-white text-white bg-transparent'}`}
+            className={`reveal px-8 py-3 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/30 cursor-pointer ${contactHover ? 'text-white bg-transparent border-0' : 'border border-white text-white bg-transparent'}`}
             aria-label="Get started - scroll to main"
           >
             Get Started
           </button>
 
           <a
-            href="/contact"
+            href="#contact"
             onMouseEnter={() => setContactHover(true)}
             onMouseLeave={() => setContactHover(false)}
             className="group btn btn-ghost btn-lg px-6 relative overflow-hidden transition-all duration-300 border border-transparent rounded-lg hover:border-white hover:scale-105 hover:bg-transparent"

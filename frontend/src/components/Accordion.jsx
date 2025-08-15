@@ -94,43 +94,50 @@ export default function Accordion() {
 	};
 
 	return (
-		<section id="faq" className="py-16 px-6">
+		<section id="faq" className="px-4 py-12">
 			<div className="max-w-4xl mx-auto">
-				<h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-					Häufig gestellte Fragen
-				</h2>
-				<p className="text-center text-muted mb-8">
-					Antworten zu meinen Services, Paketen und Kontaktmöglichkeiten.
-				</p>
+				<div className="card reveal bg-base-200/10 border border-base-300 relative overflow-visible" style={{
+				boxShadow: '0 30px 60px rgba(7,16,51,0.28), 0 16px 48px rgba(6,78,59,0.16), 0 10px 30px rgba(0,0,0,0.10), 0 6px 18px rgba(0,0,0,0.06), 0 3px 8px rgba(255,255,255,0.03), 0 1px 0 rgba(255,255,255,0.04)'
+			}}>
+					<div className="card-body">
+						<h2 className="reveal text-3xl md:text-4xl font-bold text-center mb-6">
+							Häufig gestellte Fragen
+						</h2>
+						<p className="text-center text-muted mb-8">
+							Antworten zu meinen Services, Paketen und Kontaktmöglichkeiten.
+						</p>
 
-				<div className="space-y-3">
-					{faqs.map((item, i) => (
-						<div
-							key={i}
-							tabIndex={0}
-							className={`collapse collapse-plus border border-base-300 rounded-box ${
-								openIndex === i ? 'collapse-open' : ''
-							}`}
-						>
-							<div
-								className="collapse-title text-lg font-medium flex justify-between items-center"
-								role="button"
-								aria-expanded={openIndex === i}
-								onClick={() => toggle(i)}
-								onKeyDown={(e) => {
-									if (e.key === 'Enter' || e.key === ' ') {
-										e.preventDefault();
-										toggle(i);
-									}
-								}}
-							>
-								{item.q}
-							</div>
-							<div className="collapse-content">
-								<div>{item.a}</div>
-							</div>
+						<div className="space-y-3">
+							{faqs.map((item, i) => (
+								<div
+									key={i}
+									tabIndex={0}
+									className={`collapse collapse-plus border border-base-300 rounded-box ${
+										openIndex === i ? 'collapse-open' : ''
+									}`}
+								>
+									<div
+										className="collapse-title text-lg font-medium flex justify-between items-center"
+										role="button"
+										aria-expanded={openIndex === i}
+										onClick={() => toggle(i)}
+										onKeyDown={(e) => {
+											if (e.key === 'Enter' || e.key === ' ') {
+												e.preventDefault();
+												toggle(i);
+											}
+										}}
+									>
+										{item.q}
+									</div>
+									<div className="collapse-content">
+										<div>{item.a}</div>
+									</div>
+								</div>
+							))}
 						</div>
-					))}
+
+					</div>
 				</div>
 			</div>
 		</section>

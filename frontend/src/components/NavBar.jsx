@@ -89,7 +89,7 @@ export default function NavBar() {
 
       <div className="navbar-center">
         <a href="/" className="text-xl font-semibold hover:scale-105 transition-transform cursor-pointer" aria-label="Home">
-          felixneumann
+          
         </a>
       </div>
 

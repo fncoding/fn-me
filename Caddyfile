@@ -1,0 +1,6 @@
+# Replace the email below with your contact address for ACME registration
+felixneumannn.me, www.felixneumannn.me {
+  reverse_proxy app:3000
+  encode gzip zstd
+  tls admin@felixneumannn.me
+}

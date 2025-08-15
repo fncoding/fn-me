@@ -1,0 +1,29 @@
+1. Full Stack Project mit Email verfication, registration, login
+url: https://github.com/fncoding/fn-me
+stack: python, django, bootstrap, scss
+bild: projects/fn.png
+2. ICD Diagnosen API diese hat links zu frontend und backend
+backend:
+https://github.com/fncoding/icd10-api
+frontend:
+https://github.com/fncoding/icd10-api-frontend
+stack: django, react-vite
+bild: project/icd.png
+3. Sneaker Landingpage
+live preview:
+https://mmsneaks.netlify.app/
+source 
+stack: react vite, threejs, gsap
+bild: projects/sneaks.png
+4. Brutalism OnePager
+stack: react vite, threejs, gsap
+preview: 
+https://fncoding.netlify.app/
+source:
+https://github.com/fncoding/fn-logo-brutalism
+bild: projects/onepager.png
+5. Arzt Landing OnePager
+stack: react-vite, tailwindcss, gsap
+preview: https://orthopraxis-template.netlify.app/
+source: https://github.com/fncoding/react-landing-page
+bild: projects/arzt.png
