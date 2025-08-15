@@ -60,7 +60,6 @@ function App() {
       {/*<Contact />*/}
       <Separator />
       <Footer />
-    
       <ScrollToTopButton />
     </>
   );
