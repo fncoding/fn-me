@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/fn-coding/fn-me:latest 
+    image: ghcr.io/fncoding/fn-me:latest 
     build:
       context: ./frontend
       dockerfile: Dockerfile
