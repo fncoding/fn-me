@@ -50,5 +50,5 @@ jobs:
           port: ${{ secrets.VPS_SSH_PORT }}
           script: |
             cd ${{ secrets.REMOTE_PATH }}
-            docker compose pull
-            docker compose up -d --remove-orphans
+            docker-compose pull
+            docker-compose up -d --remove-orphans
