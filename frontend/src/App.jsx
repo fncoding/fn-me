@@ -7,7 +7,6 @@ import Accordion from './components/Accordion';
 import AboutMe from './components/AboutMe';
 import Separator from './components/Separator';
 import Portfolio from './components/Portfolio';
-// import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 
