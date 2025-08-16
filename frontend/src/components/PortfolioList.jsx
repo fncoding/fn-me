@@ -6,10 +6,10 @@ export default function PortfolioList() {
     {
       id: 1,
       title: 'Full Stack Project (fn-me)',
-      description: 'Full Stack Project mit Email verification, registration und login. Stack: Python, Django, Bootstrap, SCSS.',
+      description: 'Full Stack Project, meine alte Webpage open source, mit Email verification, registration und login. Stack: Python, Django, Bootstrap, SCSS.',
       image: '/projects/fn.png',
       preview: null,
-      repo: 'https://github.com/fncoding/fn-me',
+      repo: 'https://github.com/fncoding/kid-me',
     },
     {
       id: 2,
@@ -46,7 +46,7 @@ export default function PortfolioList() {
   ];
 
   return (
-    <section className="px-4 py-12">
+    <section id="portfolio" className="px-4 py-12">
       <h2 className="reveal text-center text-3xl font-bold mb-6">Portfolio</h2>
       <div className="space-y-6">
         {projects.map((p) => (

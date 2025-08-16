@@ -8,6 +8,7 @@ import AboutMe from './components/AboutMe';
 import Separator from './components/Separator';
 import Portfolio from './components/Portfolio';
 import Footer from './components/Footer';
+import Contact from './components/Contact';
 
 
 function ScrollToTopButton() {
@@ -56,7 +57,8 @@ function App() {
       <Separator />
       <Portfolio />
       <Separator />
-     <Separator />
+      <Contact />
+      <Separator />
       <Footer />
       <ScrollToTopButton />
     </>

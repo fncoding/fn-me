@@ -10,6 +10,10 @@ export default function PortfolioCard({ project = {} }) {
   } = project;
 
   const isExternal = (url) => typeof url === 'string' && /^(https?:)?\/\//.test(url);
+  // special labels for ICD Diagnosen project
+  const isIcd = project?.id === 2 || String(title).toLowerCase().includes('icd');
+  const previewLabel = isIcd ? 'GitHub: Frontend' : 'Preview';
+  const repoLabel = isIcd ? 'GitHub: Backend' : 'GitHub';
 
   return (
     <section className="py-12 px-6">
@@ -38,9 +42,9 @@ export default function PortfolioCard({ project = {} }) {
                       href={previewUrl}
                       className="inline-block px-6 py-2 rounded-lg border border-white text-white bg-transparent hover:bg-white hover:text-black transition-colors duration-200"
                       {...(isExternal(previewUrl) ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                      aria-label="Live Preview"
+                      aria-label={previewLabel}
                     >
-                      Preview
+                      {previewLabel}
                     </a>
                   ) : null}
 
@@ -49,9 +53,9 @@ export default function PortfolioCard({ project = {} }) {
                       href={repoUrl}
                       className="inline-block px-6 py-2 rounded-lg border border-white text-white bg-transparent hover:bg-white hover:text-black transition-colors duration-200"
                       {...(isExternal(repoUrl) ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                      aria-label="GitHub Repository"
+                      aria-label={repoLabel}
                     >
-                      GitHub
+                      {repoLabel}
                     </a>
                   ) : null}
                 </div>
