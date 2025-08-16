@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { initGsapReveal } from './hooks/useGsapReveal';
-
 import NavBar from './components/NavBar';
 import Services from './components/Services';
 import HeroSection from './components/HeroSection';
