@@ -1,6 +1,6 @@
 services:
   app:
-    image: yourusername/vite-react-app:latest
+    image: ghcr.io/fn-coding/fn-me:latest 
     build:
       context: ./frontend
       dockerfile: Dockerfile
