@@ -3,11 +3,10 @@ import React, { useEffect, useState } from 'react';
 const sections = [
   { id: '', label: 'Homepage' },
   { id: 'faq', label: 'FaQ' },
+  { id: 'about', label: 'Über mich' },
   { id: 'services', label: 'Leistungen' },
-  { id: 'about', label: 'About Me' },
   { id: 'portfolio', label: 'Portfolio' },
   { id: 'contact', label: 'Contact' },
-  { id: 'impressum', label: 'Impressum' },
 ];
 
 export default function NavBar() {

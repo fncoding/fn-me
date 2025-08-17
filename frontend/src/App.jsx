@@ -51,9 +51,9 @@ function App() {
       <HeroSection />
       <Accordion />
       <Separator />
-      <Services />
-      <Separator />
       <AboutMe />
+      <Separator />
+      <Services />
       <Separator />
       <Portfolio />
       <Separator />

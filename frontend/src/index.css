@@ -35,5 +35,16 @@
   --noise: 0;
 }
 
+.card {
+  padding: 0.2rem;
+  margin: 1rem;
+  border: 1.5px solid #38493abd;
+  box-shadow:
+    0 0 2px 1px #00000011,
+    0 0 6px 2px #22222222,
+    0 0 12px 4px #44444433,
+    0 0 24px 8px #88888822,
+    0 0 8px 8px #ffffff08;
+}
 
 

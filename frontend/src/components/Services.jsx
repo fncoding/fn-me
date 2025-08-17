@@ -70,7 +70,7 @@ export default function Services() {
         {/* Full menu: clean responsive table + modern cards (DaisyUI) */}
         <div className="mt-10 max-w-4xl mx-auto">
           {/* Responsive table using DaisyUI */}
-          <div className="overflow-x-auto bg-transparent rounded-lg border border-base-300 p-4">
+          <div className="card overflow-x-auto bg-transparent rounded-lg border border-base-300 p-4">
             <table className="table table-compact w-full">
               <thead>
                 <tr>
