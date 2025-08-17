@@ -11,7 +11,7 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
-      devOptions: { enabled: false },
+      devOptions: { enabled: true }, // <-- SW & manifest im dev aktivieren (nur zu Testzwecken)
       strategies: 'generateSW',
       workbox: {
         maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
@@ -35,9 +35,9 @@ export default defineConfig({
         ],
       },
       manifest: {
-        name: 'Meine React PWA',
-        short_name: 'ReactPWA',
-        description: 'Eine kleine React Progressive Web App',
+        name: 'felixneumann.me',
+        short_name: 'FN.me',
+        description: 'Landingpage: felxneumann.me',
         theme_color: '#ffffff',
         background_color: '#000000',
         display: 'standalone',
